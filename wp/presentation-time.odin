@@ -226,7 +226,7 @@ presentation_feedback_interface : interface
 
 @(private)
 @(init)
-init_interfaces_presentation_time :: proc() {
+init_interfaces_presentation_time :: proc "contextless" () {
 	presentation_interface.name = "wp_presentation"
 	presentation_interface.version = 2
 	presentation_interface.method_count = 2
