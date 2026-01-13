@@ -14,7 +14,7 @@ wlr_layer_shell_unstable_v1_types := []^interface {
 	&wl.output_interface,
 	nil,
 	nil,
-	&xdg.popup_interface,
+	auto_cast &xdg.popup_interface,
 }
 /* Clients can use this interface to assign the surface_layer role to
       wl_surfaces. Such surfaces are assigned to a "layer" of the output and
@@ -352,7 +352,7 @@ init_interfaces_wlr_layer_shell_unstable_v1 :: proc "contextless" () {
 }
 
 // Functions from libwayland-client
-import wl "shared:wayland"
+import wl ".."
 fixed_t :: wl.fixed_t
 proxy :: wl.proxy
 message :: wl.message
