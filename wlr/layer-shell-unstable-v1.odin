@@ -1,5 +1,5 @@
 #+build linux
-package wayland
+package wlr
 
 import "../xdg"
 
