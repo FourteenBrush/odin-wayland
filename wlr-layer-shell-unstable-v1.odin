@@ -1,5 +1,5 @@
 #+build linux
-package wlr_layer_shell_unstable_v1
+package wayland
 @(private)
 wlr_layer_shell_unstable_v1_types := []^interface {
 	nil,
