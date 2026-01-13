@@ -11,3 +11,7 @@ Required libraries are:
 - https://wayland-book.com
 - https://wayland.app
 - https://wayland.freedesktop.org/docs/html/apb.html
+
+## Changes from upstream
+
+- Added [wlr-layer-shell-unstable-v1](https://wayland.app/protocols/wlr-layer-shell-unstable-v1) protocol support
