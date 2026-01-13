@@ -1,5 +1,8 @@
 #+build linux
 package wayland
+
+import "xdg"
+
 @(private)
 wlr_layer_shell_unstable_v1_types := []^interface {
 	nil,
@@ -11,7 +14,7 @@ wlr_layer_shell_unstable_v1_types := []^interface {
 	&wl.output_interface,
 	nil,
 	nil,
-	&popup_interface,
+	&xdg.popup_interface,
 }
 /* Clients can use this interface to assign the surface_layer role to
       wl_surfaces. Such surfaces are assigned to a "layer" of the output and
@@ -215,7 +218,7 @@ layer_surface_v1_set_keyboard_interactivity :: proc "contextless" (layer_surface
         See the documentation of xdg_popup for more details about what an
         xdg_popup is and how it is used. */
 LAYER_SURFACE_V1_GET_POPUP :: 5
-layer_surface_v1_get_popup :: proc "contextless" (layer_surface_v1_: ^layer_surface_v1, popup_: ^popup) {
+layer_surface_v1_get_popup :: proc "contextless" (layer_surface_v1_: ^layer_surface_v1, popup_: ^xdg.popup) {
 	proxy_marshal_flags(cast(^proxy)layer_surface_v1_, LAYER_SURFACE_V1_GET_POPUP, nil, proxy_get_version(cast(^proxy)layer_surface_v1_), 0, popup_)
 }
 
